@@ -5,7 +5,7 @@ protocol LocationsRespositoryProtocol: AnyObject {
   func fetch() async throws -> Locations
 }
 
-public final class LocationsRepository: LocationsRespositoryProtocol {
+final class LocationsRepository: LocationsRespositoryProtocol {
   
   private let apiClient: ApiClient
   
