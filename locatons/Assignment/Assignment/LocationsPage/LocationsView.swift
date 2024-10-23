@@ -7,8 +7,9 @@ struct LocationsView: View {
   
   @ObservedObject var viewModel: LocationsViewModel
   
-  init(viewModel: LocationsViewModel = .init()) {
+  init(viewModel: LocationsViewModel = .init(), delegate: LocationsViewModelDelegate) {
     self.viewModel = viewModel
+    self.viewModel.delegate = delegate
   }
   
   var body: some View {

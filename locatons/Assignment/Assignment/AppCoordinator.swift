@@ -10,7 +10,7 @@ class AppCoordinator {
   }
   
   func start() {
-    let view = UIHostingController(rootView: LocationsView())
+    let view = UIHostingController(rootView: LocationsView(delegate: self))
     
     window.rootViewController = view
   }
@@ -18,6 +18,8 @@ class AppCoordinator {
 
 extension AppCoordinator: LocationsViewModelDelegate {
   func navigateForCoordinates(latitude: Double, longitude: Double) {
-    // Todo: navigation
+    guard let url = WikipediaUrlBuilder.build(latitude: latitude, longitude: longitude) else { return }
+    
+    UIApplication.shared.open(url)
   }
 }

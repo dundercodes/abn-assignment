@@ -10,7 +10,7 @@ final class LocationsViewModel: ObservableObject {
   
   @Published var state: ViewState = .loading
   
-  private weak var delegate: LocationsViewModelDelegate?
+  weak var delegate: LocationsViewModelDelegate?
   private let apiClient: ApiClient
   
   init(apiClient: ApiClient = .init()) {
