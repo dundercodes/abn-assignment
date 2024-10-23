@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Abdullah Saeed on 23/08/2023.
-//
-
 import Foundation
 
 public enum APIConfig {

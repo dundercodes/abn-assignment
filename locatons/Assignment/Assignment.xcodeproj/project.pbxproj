@@ -91,15 +91,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A150A4A52CC531B700A47BC3 /* LocationsPage */ = {
+		A148BADA2CC82BE900EC28E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A150A4B92CC54FCB00A47BC3 /* Location.swift */,
 				A150A4AE2CC54C3500A47BC3 /* Locations.swift */,
-				A150A4A72CC5331C00A47BC3 /* LocationsView.swift */,
-				A150A4B12CC54D3400A47BC3 /* LocationsViewModel.swift */,
-				A150A4B32CC54DD400A47BC3 /* LocationsViewState.swift */,
 				A150A4C02CC59D3A00A47BC3 /* LocationsRepository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A148BADB2CC82BF600EC28E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A150A4B12CC54D3400A47BC3 /* LocationsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A148BADC2CC82BFE00EC28E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A150A4A72CC5331C00A47BC3 /* LocationsView.swift */,
+				A150A4B32CC54DD400A47BC3 /* LocationsViewState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A148BADD2CC82C4100EC28E4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A153C61F2AD43C830006C2BF /* AppDelegate.swift */,
+				A153C6552AD4838D0006C2BF /* AppCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A150A4A52CC531B700A47BC3 /* LocationsPage */ = {
+			isa = PBXGroup;
+			children = (
+				A148BADC2CC82BFE00EC28E4 /* View */,
+				A148BADB2CC82BF600EC28E4 /* ViewModel */,
+				A148BADA2CC82BE900EC28E4 /* Model */,
 			);
 			path = LocationsPage;
 			sourceTree = "<group>";
@@ -145,12 +178,11 @@
 		A153C61E2AD43C830006C2BF /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				A148BADD2CC82C4100EC28E4 /* Application */,
 				A150A4BD2CC5952300A47BC3 /* Utilities */,
 				A150A4A52CC531B700A47BC3 /* LocationsPage */,
-				A153C61F2AD43C830006C2BF /* AppDelegate.swift */,
 				A153C6282AD43C840006C2BF /* Assets.xcassets */,
 				A153C62D2AD43C840006C2BF /* Info.plist */,
-				A153C6552AD4838D0006C2BF /* AppCoordinator.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
