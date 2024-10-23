@@ -59,19 +59,41 @@ __attribute__((annotate("returns_localized_nsstring"))) static inline NSString *
     return activity;
 }
 
-+ (instancetype)wmf_placesActivityWithURL:(NSURL *)activityURL {
-    NSURLComponents *components = [NSURLComponents componentsWithURL:activityURL resolvingAgainstBaseURL:NO];
+
+
++ (instancetype)wmf_placesActivity:(NSURL *)activityURL {
+  NSUserActivity *activity = [self wmf_pageActivityWithName:@"Places"];
+  NSURLComponents *components = [NSURLComponents componentsWithURL:activityURL resolvingAgainstBaseURL:NO];
+
+  if ([activityURL.lastPathComponent isEqualToString:@"coordinates"]) {
+    NSNumber *latitude = nil;
+    NSNumber *longitude = nil;
+    for (NSURLQueryItem *item in components.queryItems) {
+      if ([item.name isEqualToString:@"lat"]) {
+        latitude = @(item.value.doubleValue);
+      } else if ([item.name isEqualToString:@"long"]) {
+        longitude = @(item.value.doubleValue);
+      }
+    }
+
+    if (latitude != nil && longitude != nil) {
+      [activity addUserInfoEntriesFromDictionary:@{
+        @"WMFPlacesCoordinatesLatitude" : latitude,
+        @"WMFPlacesCoordinatesLongitude" : longitude
+      }];
+    }
+  } else {
     NSURL *articleURL = nil;
     for (NSURLQueryItem *item in components.queryItems) {
-        if ([item.name isEqualToString:@"WMFArticleURL"]) {
-            NSString *articleURLString = item.value;
-            articleURL = [NSURL URLWithString:articleURLString];
-            break;
-        }
+      if ([item.name isEqualToString:@"WMFArticleURL"]) {
+        NSString *articleURLString = item.value;
+        articleURL = [NSURL URLWithString:articleURLString];
+        break;
+      }
     }
-    NSUserActivity *activity = [self wmf_pageActivityWithName:@"Places"];
     activity.webpageURL = articleURL;
-    return activity;
+  }
+  return activity;
 }
 
 + (instancetype)wmf_exploreViewActivity {
@@ -124,7 +146,7 @@ __attribute__((annotate("returns_localized_nsstring"))) static inline NSString *
     } else if ([url.host isEqualToString:@"explore"]) {
         return [self wmf_exploreViewActivity];
     } else if ([url.host isEqualToString:@"places"]) {
-        return [self wmf_placesActivityWithURL:url];
+        return [self wmf_placesActivity:url];
     } else if ([url.host isEqualToString:@"saved"]) {
         return [self wmf_savedPagesViewActivity];
     } else if ([url.host isEqualToString:@"history"]) {
