@@ -2,10 +2,15 @@ import Foundation
 import Combine
 import Networking
 
+protocol LocationsViewModelDelegate: AnyObject {
+  func navigateForCoordinates(latitude: Double, longitude: Double)
+}
+
 final class LocationsViewModel: ObservableObject {
   
   @Published var state: ViewState = .loading
   
+  private weak var delegate: LocationsViewModelDelegate?
   private let apiClient: ApiClient
   
   init(apiClient: ApiClient = .init()) {
@@ -29,12 +34,12 @@ final class LocationsViewModel: ObservableObject {
   }
   
   func didSelectExistingLocation(_ location: Location) {
-    // Todo: Navigation
+    delegate?.navigateForCoordinates(latitude: location.lat, longitude: location.long)
   }
   
   func didInputNewLocation(latitude: Double?, longitude: Double?) {
     guard let latitude, let longitude else { return }
     
-    // Todo: Navigation
+    delegate?.navigateForCoordinates(latitude: latitude, longitude: longitude)
   }
 }

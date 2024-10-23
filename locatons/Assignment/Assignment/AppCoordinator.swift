@@ -16,3 +16,8 @@ class AppCoordinator {
   }
 }
 
+extension AppCoordinator: LocationsViewModelDelegate {
+  func navigateForCoordinates(latitude: Double, longitude: Double) {
+    // Todo: navigation
+  }
+}
