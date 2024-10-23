@@ -10,13 +10,13 @@ final class WikipediaUrlBuilderTests: XCTestCase {
     sut = WikipediaUrlBuilder.self
   }
   
-  func testBuild_givenCoordinates_shouldReturnNonNilUrl() {
+  func testBuildPlaces_givenCoordinates_shouldReturnNonNilUrl() {
     // Arrange
     let latitude = 52.3547498
     let longitude = 4.8339215
     
     // Act
-    let result = sut.build(latitude: latitude, longitude: longitude)
+    let result = sut.buildPlaces(latitude: latitude, longitude: longitude)
     
     // Assert
     let expectedResult = "wikipedia://places/coordinates?lat=52.3547498&long=4.8339215"

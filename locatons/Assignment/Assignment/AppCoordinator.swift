@@ -18,7 +18,7 @@ class AppCoordinator {
 
 extension AppCoordinator: LocationsViewModelDelegate {
   func navigateForCoordinates(latitude: Double, longitude: Double) {
-    guard let url = WikipediaUrlBuilder.build(latitude: latitude, longitude: longitude) else { return }
+    guard let url = WikipediaUrlBuilder.buildPlaces(latitude: latitude, longitude: longitude) else { return }
     
     UIApplication.shared.open(url)
   }

@@ -3,7 +3,7 @@ import Foundation
 struct WikipediaUrlBuilder {
   static let wikipediaUrlScheme = "wikipedia"
 
-  static func build(latitude: Double, longitude: Double) -> URL? {
+  static func buildPlaces(latitude: Double, longitude: Double) -> URL? {
     var components = URLComponents()
     components.scheme = wikipediaUrlScheme
     components.host = "places"
