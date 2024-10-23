@@ -28,7 +28,7 @@ final class LocationsViewModel: ObservableObject {
     }
   }
   
-  func didSelectExistingLocation(at index: Int) {
+  func didSelectExistingLocation(_ location: Location) {
     // Todo: Navigation
   }
   

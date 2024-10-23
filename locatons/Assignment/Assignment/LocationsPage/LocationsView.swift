@@ -5,7 +5,11 @@ struct LocationsView: View {
   @State private var customLatitude: Double? = nil
   @State private var customLongitude: Double? = nil
   
-  @ObservedObject var viewModel: LocationsViewModel = .init()
+  @ObservedObject var viewModel: LocationsViewModel
+  
+  init(viewModel: LocationsViewModel = .init()) {
+    self.viewModel = viewModel
+  }
   
   var body: some View {
     Group {
@@ -46,7 +50,7 @@ private extension LocationsView {
             .font(.caption)
         }
         .onTapGesture {
-          viewModel.didSelectExistingLocation(at: index)
+          viewModel.didSelectExistingLocation(location)
         }
       }
     }
