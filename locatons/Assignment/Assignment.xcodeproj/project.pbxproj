@@ -13,6 +13,11 @@
 		A150A4B42CC54DD400A47BC3 /* LocationsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4B32CC54DD400A47BC3 /* LocationsViewState.swift */; };
 		A150A4BA2CC54FCB00A47BC3 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4B92CC54FCB00A47BC3 /* Location.swift */; };
 		A150A4BC2CC591B900A47BC3 /* WikipediaUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4BB2CC591B900A47BC3 /* WikipediaUrlBuilder.swift */; };
+		A150A4BF2CC59C3F00A47BC3 /* LocationsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4BE2CC59C3F00A47BC3 /* LocationsViewModelTests.swift */; };
+		A150A4C12CC59D3A00A47BC3 /* LocationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4C02CC59D3A00A47BC3 /* LocationsRepository.swift */; };
+		A150A4C42CC59E6700A47BC3 /* LocationsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4C32CC59E6700A47BC3 /* LocationsRepositoryMock.swift */; };
+		A150A4C62CC5A7E400A47BC3 /* LocationsViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4C52CC5A7E400A47BC3 /* LocationsViewModelDelegateMock.swift */; };
+		A150A4C82CC5A8B900A47BC3 /* Location+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4C72CC5A8B900A47BC3 /* Location+Mock.swift */; };
 		A153C6202AD43C830006C2BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153C61F2AD43C830006C2BF /* AppDelegate.swift */; };
 		A153C6292AD43C840006C2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A153C6282AD43C840006C2BF /* Assets.xcassets */; };
 		A153C6372AD43C840006C2BF /* WikipediaUrlBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153C6362AD43C840006C2BF /* WikipediaUrlBuilderTests.swift */; };
@@ -52,6 +57,11 @@
 		A150A4B32CC54DD400A47BC3 /* LocationsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewState.swift; sourceTree = "<group>"; };
 		A150A4B92CC54FCB00A47BC3 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A150A4BB2CC591B900A47BC3 /* WikipediaUrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaUrlBuilder.swift; sourceTree = "<group>"; };
+		A150A4BE2CC59C3F00A47BC3 /* LocationsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModelTests.swift; sourceTree = "<group>"; };
+		A150A4C02CC59D3A00A47BC3 /* LocationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepository.swift; sourceTree = "<group>"; };
+		A150A4C32CC59E6700A47BC3 /* LocationsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsRepositoryMock.swift; sourceTree = "<group>"; };
+		A150A4C52CC5A7E400A47BC3 /* LocationsViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		A150A4C72CC5A8B900A47BC3 /* Location+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Mock.swift"; sourceTree = "<group>"; };
 		A153C61C2AD43C830006C2BF /* Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A153C61F2AD43C830006C2BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A153C6282AD43C840006C2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 				A150A4A72CC5331C00A47BC3 /* LocationsView.swift */,
 				A150A4B12CC54D3400A47BC3 /* LocationsViewModel.swift */,
 				A150A4B32CC54DD400A47BC3 /* LocationsViewState.swift */,
+				A150A4C02CC59D3A00A47BC3 /* LocationsRepository.swift */,
 			);
 			path = LocationsPage;
 			sourceTree = "<group>";
@@ -99,6 +110,16 @@
 				A150A4BB2CC591B900A47BC3 /* WikipediaUrlBuilder.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A150A4C22CC59E5900A47BC3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A150A4C32CC59E6700A47BC3 /* LocationsRepositoryMock.swift */,
+				A150A4C52CC5A7E400A47BC3 /* LocationsViewModelDelegateMock.swift */,
+				A150A4C72CC5A8B900A47BC3 /* Location+Mock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		A153C6132AD43C830006C2BF = {
@@ -137,7 +158,9 @@
 		A153C6352AD43C840006C2BF /* AssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				A150A4C22CC59E5900A47BC3 /* Mocks */,
 				A153C6362AD43C840006C2BF /* WikipediaUrlBuilderTests.swift */,
+				A150A4BE2CC59C3F00A47BC3 /* LocationsViewModelTests.swift */,
 			);
 			path = AssignmentTests;
 			sourceTree = "<group>";
@@ -259,6 +282,7 @@
 				A150A4AF2CC54C3500A47BC3 /* Locations.swift in Sources */,
 				A150A4BC2CC591B900A47BC3 /* WikipediaUrlBuilder.swift in Sources */,
 				A150A4B42CC54DD400A47BC3 /* LocationsViewState.swift in Sources */,
+				A150A4C12CC59D3A00A47BC3 /* LocationsRepository.swift in Sources */,
 				A153C6202AD43C830006C2BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A150A4C82CC5A8B900A47BC3 /* Location+Mock.swift in Sources */,
+				A150A4C62CC5A7E400A47BC3 /* LocationsViewModelDelegateMock.swift in Sources */,
 				A153C6372AD43C840006C2BF /* WikipediaUrlBuilderTests.swift in Sources */,
+				A150A4C42CC59E6700A47BC3 /* LocationsRepositoryMock.swift in Sources */,
+				A150A4BF2CC59C3F00A47BC3 /* LocationsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

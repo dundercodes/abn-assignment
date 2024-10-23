@@ -11,16 +11,17 @@ final class LocationsViewModel: ObservableObject {
   @Published var state: ViewState = .loading
   
   weak var delegate: LocationsViewModelDelegate?
-  private let apiClient: ApiClient
+  private let locationsRepository: LocationsRespositoryProtocol
   
-  init(apiClient: ApiClient = .init()) {
-    self.apiClient = apiClient
+  init(locationsRepository: LocationsRespositoryProtocol = LocationsRepository()) {
+    self.locationsRepository = locationsRepository
   }
   
-  func viewDidAppear() {
+  // completion is only used for testing
+  func viewDidAppear(completion: @escaping () -> Void = {}) {
     Task {
       do {
-        let locations: Locations = try await apiClient.request()
+        let locations: Locations = try await locationsRepository.fetch()
         
         await MainActor.run {
           state = .dataLoaded(locations.locations)
@@ -30,6 +31,8 @@ final class LocationsViewModel: ObservableObject {
           state = .error
         }
       }
+      
+      completion()
     }
   }
   
