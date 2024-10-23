@@ -4,7 +4,9 @@ The assignment contains 2 folders:
 - `wikipedia-ios`: contains the Wikipedia iOS app respository with changes to catch coordinates passed in a deeplink and open them in the Places tab.
 - `locations`: simple app that fetches locations from a server and allows user to open these locations in the Wikipedia app. 
 
-![demo](./demo.mp4)
+<center>
+<img src="./demo.gif" height="600" />
+</center>
 
 ## Tech stack
 - Xcode 15.4
@@ -12,7 +14,7 @@ The assignment contains 2 folders:
 - iOS 17+
 - Swift packages 
 
-I have used no external dependencies for the Locations app. In addition, the app contains one local Swift package `Networking` containing classes and configurations responsible for sending requests to backend API. This will keep the app's code modularized, providing benefits such as faster incremental build times, ability to share code between  modules and fewer git conflicts for team members working on different parts of the app.  
+I have used no external dependencies for the Locations app. Locations app contains one local Swift package `Networking` containing classes and configurations responsible for sending requests to backend API. This will keep the app's code modularized, providing benefits such as faster incremental build times, ability to share code between  modules and fewer git conflicts for team members working on different parts of the app.  
 
 ## Wikipedia deeplink
 I have expanded the existing deeplink URL pattern used by the wikipedia app for places, by adding a coordinates path with query parameter: `wikipedia://places/coordinates?lat={latitude}&long={longitude}`.
