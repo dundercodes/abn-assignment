@@ -16,6 +16,8 @@ struct LocationsView: View {
         NavigationView {
           List {
             existingLocationsSection(data)
+            
+            newLocationInputs(viewModel.didInputNewLocation(latitude:longitude:))
           }
           .navigationTitle("Locations")
         }
@@ -48,5 +50,17 @@ private extension LocationsView {
         }
       }
     }
+  }
+  
+  func newLocationInputs(_ onTapGo: @escaping (Double?, Double?) -> Void) -> some View {
+    Section("New") {
+      TextField("Latitude", value: $customLatitude, format: .number)
+      TextField("Longitude", value: $customLongitude, format: .number)
+      
+      Button("Go") {
+        onTapGo(customLatitude, customLongitude)
+      }
+    }
+    .keyboardType(.decimalPad)
   }
 }

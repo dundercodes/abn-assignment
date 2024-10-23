@@ -31,4 +31,10 @@ final class LocationsViewModel: ObservableObject {
   func didSelectExistingLocation(at index: Int) {
     // Todo: Navigation
   }
+  
+  func didInputNewLocation(latitude: Double?, longitude: Double?) {
+    guard let latitude, let longitude else { return }
+    
+    // Todo: Navigation
+  }
 }
