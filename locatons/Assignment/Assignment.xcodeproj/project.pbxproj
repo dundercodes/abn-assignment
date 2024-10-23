@@ -15,7 +15,7 @@
 		A150A4BC2CC591B900A47BC3 /* WikipediaUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A150A4BB2CC591B900A47BC3 /* WikipediaUrlBuilder.swift */; };
 		A153C6202AD43C830006C2BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153C61F2AD43C830006C2BF /* AppDelegate.swift */; };
 		A153C6292AD43C840006C2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A153C6282AD43C840006C2BF /* Assets.xcassets */; };
-		A153C6372AD43C840006C2BF /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153C6362AD43C840006C2BF /* AssignmentTests.swift */; };
+		A153C6372AD43C840006C2BF /* WikipediaUrlBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153C6362AD43C840006C2BF /* WikipediaUrlBuilderTests.swift */; };
 		A153C6522AD47F130006C2BF /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = A153C6512AD47F130006C2BF /* Networking */; };
 		A153C6542AD47F130006C2BF /* Networking in Embed Frameworks */ = {isa = PBXBuildFile; productRef = A153C6512AD47F130006C2BF /* Networking */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A153C6562AD4838D0006C2BF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A153C6552AD4838D0006C2BF /* AppCoordinator.swift */; };
@@ -57,7 +57,7 @@
 		A153C6282AD43C840006C2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A153C62D2AD43C840006C2BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A153C6322AD43C840006C2BF /* AssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A153C6362AD43C840006C2BF /* AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTests.swift; sourceTree = "<group>"; };
+		A153C6362AD43C840006C2BF /* WikipediaUrlBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaUrlBuilderTests.swift; sourceTree = "<group>"; };
 		A153C64F2AD43ECD0006C2BF /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		A153C6552AD4838D0006C2BF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,7 +137,7 @@
 		A153C6352AD43C840006C2BF /* AssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				A153C6362AD43C840006C2BF /* AssignmentTests.swift */,
+				A153C6362AD43C840006C2BF /* WikipediaUrlBuilderTests.swift */,
 			);
 			path = AssignmentTests;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A153C6372AD43C840006C2BF /* AssignmentTests.swift in Sources */,
+				A153C6372AD43C840006C2BF /* WikipediaUrlBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
